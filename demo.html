@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/YFlow.css">
+</head>
+<body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/snap.svg.min.js"></script>
+<script type="text/javascript" src="js/undo.js"></script>
+<script type="text/javascript" src="common/ActionHandler.js"></script>
+<script type="text/javascript" src="common/operation.js"></script>
+<script type="text/javascript" src="common/controller.js"></script>
+<script type="text/javascript" src="js/YFlowUtil.js"></script>
+<script type="text/javascript" src="js/YFlow.js"></script>
+<script type="text/javascript" src="component/basicComponent.js"></script>
+<script>
+$(function (){
+    var options={
+            selectedStyleFlag:1,
+            save:function(args){
+               alert(args);
+            },
+            buttonGroup: [
+
+            ],
+            tools: [
+                {
+                    group: "形状组件",
+                    type: "shape",
+                    child: [
+                        {
+                            id: "Component_Circle",
+                            src: "images/circle.svg",
+                            text: "圆形"
+                        },
+                        {
+                            id: "Component_Rect",
+                            src: "images/矩形_rectangular47.svg",
+                            text: "矩形"
+                        },
+                        {
+                            id: "Component_Trangle",
+                            src: "images/三角形_triangle23.svg",
+                            text: "三角"
+                        },
+                        {
+                            id: "Component_Square",
+                            src: "images/广场_square80.svg",
+                            text: "四边形"
+                        }
+                    ]
+                },
+                {
+                    group: "连线组件",
+                    type: "line",
+                    child: [
+                        {
+                            id: "Component_Line",
+                            src: "images/箭头_arrow209.svg",
+                            text: "实线"
+                        },
+                        {
+                            id: "Component_Line2",
+                            src: "images/箭头_arrow171.svg",
+                            text: "虚线"
+                        },
+                        {
+                            id: "Component_Line3",
+                            src: "images/箭头_arrow188.svg",
+                            text: "折线"
+                        },
+                        {
+                            id: "Component_Line4",
+                            src: "images/箭头_arrow174.svg",
+                            text: "折线"
+                        }
+                    ]
+                }
+            ],
+            data:{"id":"flow--1","name":"测试流图1","describe":"测试数据","data":[{"id":27,"type":"Component_Circle","group":"shape","x":414,"y":79,"r":40,"opt1":"opt-1","opt2":"ABCDEFGHINCEELFADLFJFLAJDSL","text":"圆","opt3":"","opt4":""},{"id":28,"type":"Component_Rect","group":"shape","x":374,"y":206,"width":80,"height":40,"text":"矩形"},{"id":29,"type":"Component_Circle","group":"shape","x":414,"y":387,"r":40,"opt1":"opt-1","opt2":"ABCDEFGHINCEELFADLFJFLAJDSL","text":"圆","opt3":"","opt4":""},{"id":30,"type":"Component_Circle","group":"shape","x":236,"y":225,"r":40,"opt1":"opt-1","opt2":"ABCDEFGHINCEELFADLFJFLAJDSL","text":"圆","opt3":"","opt4":""},{"id":31,"type":"Component_Circle","group":"shape","x":590,"y":226,"r":40,"opt1":"opt-1","opt2":"ABCDEFGHINCEELFADLFJFLAJDSL","text":"圆","opt3":"","opt4":""},{"id":33,"type":"Component_Line","group":"line","pointArry":[{"id":"27connPoint-4","fid":"27","obj":{"snap":"circleSj3zpabxmp6"}},{"id":"28connPoint-2","fid":"28","obj":{"snap":"circleSj3zpabxm1q8"}}],"connArry":["27","28"],"text":"连线"},{"id":35,"type":"Component_Line","group":"line","pointArry":[{"id":"28connPoint-4","fid":"28","obj":{"snap":"circleSj3zpabxm1qa"}},{"id":"29connPoint-1","fid":"29","obj":{"snap":"circleSj3zpabxm13j"}}],"connArry":["28","29"],"text":"连线"},{"id":37,"type":"Component_Line","group":"line","pointArry":[{"id":"28connPoint-1","fid":"28","obj":{"snap":"circleSj3zpabxm1q7"}},{"id":"30connPoint-2","fid":"30","obj":{"snap":"circleSj3zpabxm1k7"}}],"connArry":["28","30"],"text":"连线"},{"id":39,"type":"Component_Line","group":"line","pointArry":[{"id":"28connPoint-3","fid":"28","obj":{"snap":"circleSj3zpabxm1q9"}},{"id":"31connPoint-3","fid":"31","obj":{"snap":"circleSj3zpabxm1hb"}}],"connArry":["28","31"],"text":"连线"},{"id":41,"type":"Component_Line2","group":"line","pointArry":[{"id":"30connPoint-1","fid":"30","obj":{"snap":"circleSj3zpl3yho"}},{"id":"27connPoint-3","fid":"27","obj":{"snap":"circleSj3zpl3yh4"}}],"connArry":["30","27"],"text":"连线"},{"id":43,"type":"Component_Line2","group":"line","pointArry":[{"id":"27connPoint-2","fid":"27","obj":{"snap":"circleSj3zpl3yh3"}},{"id":"31connPoint-1","fid":"31","obj":{"snap":"circleSj3zpl3yhv"}}],"connArry":["27","31"],"text":"连线"},{"id":45,"type":"Component_Line2","group":"line","pointArry":[{"id":"31connPoint-4","fid":"31","obj":{"snap":"circleSj3zpl3yhy"}},{"id":"29connPoint-2","fid":"29","obj":{"snap":"circleSj3zpl3yhi"}}],"connArry":["31","29"],"text":"连线"},{"id":47,"type":"Component_Line2","group":"line","pointArry":[{"id":"29connPoint-3","fid":"29","obj":{"snap":"circleSj3zpl3yhj"}},{"id":"30connPoint-4","fid":"30","obj":{"snap":"circleSj3zpl3yhr"}}],"connArry":["29","30"],"text":"连线"}]}
+        };
+    $("#tool").YFlow(options);
+  });
+
+</script>
+    <div  id="tool" style="margin:0px;padding:0px">
+    </div>
+</body>
+</html>
